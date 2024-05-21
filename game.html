@@ -7,62 +7,56 @@
 </head> 
     <body>
  <p>Rock paper scissor game !!</p>
-        <button onclick=" let num = Math.random(); 
-            let compMove= ' ';
-            let resut ='';
-        if(num >= 0 && num <= 1/3 ){
-             compMove= 'rock';
-             resut ='Tie';
-            }
-        else if(num >= 1/3 && num <= 2/3){
-                compMove='paper';
-                resut ='you lost';
-            }
-        else{
-                compMove='scissor';
-                resut ='you won';
-            }
-        alert('you choose rock the computer choose '+ compMove+' so result is '+ resut+'.');  
-
-        ">rock </button>
-        <button onclick=" const num1 = Math.random()
-        
-    
-        if(num1 >= 0 && num1 <= 1/3 ){
-             compMove= 'rock';
-             resut ='you lost';
-            }
-        else if(num1 >= 1/3 && num1 <= 2/3){
-                compMove='paper';
-                resut = 'Tie';
-            }
-        else{
-                compMove='scissor';
-                resut ='you won';
-            }
-        alert('you choose paper the computer choose '+ compMove+' so result is '+ resut+'.'); 
-        
-        ">paper </button>
-
-        <button onclick=" const num2 = Math.random()
-        
-        if(num2 >= 0 && num2 <= 1/3 ){
-             compMove= 'rock';
-             resut ='you lost ';
-            }
-        else if(num2 >= 1/3 && num2 <= 2/3){
-                compMove='paper';
-                resut ='you won';
-            }
-        else{
-                compMove='scissor';
-                resut ='Tie';
-            }
-        alert('you choose scissor the computer choose '+ compMove+' so result is '+ resut+'.');
-        
-        ">scissor</button>
+        <button onclick="decision('rock');">rock </button>
+        <button onclick="decision('paper'); ">paper </button>
+        <button onclick="decision('scissor');">scissor</button>
         <script>
+                
+                function decision(playermove) {
+    const num = Math.random();
+    let compMove, resut;
 
+    if (playermove === 'rock') {
+        if (num >= 0 && num <= 1/3) {
+            compMove = 'rock';
+            resut = 'Tie';
+        } else if (num > 1/3 && num <= 2/3) { // Adjusted condition to avoid overlap
+            compMove = 'paper';
+            resut = 'you lost';
+        } else {
+            compMove = 'scissor';
+            resut = 'you won';
+        }
+    } else if (playermove === 'paper') {
+        if (num >= 0 && num <= 1/3) {
+            compMove = 'rock';
+            resut = 'you won';
+        } else if (num > 1/3 && num <= 2/3) { // Adjusted condition to avoid overlap
+            compMove = 'paper';
+            resut = 'Tie';
+        } else {
+            compMove = 'scissor';
+            resut = 'you lost';
+        }
+    } else if (playermove === 'scissor') {
+        if (num >= 0 && num <= 1/3) {
+            compMove = 'rock';
+            resut = 'you won';
+        } else if (num > 1/3 && num <= 2/3) { // Adjusted condition to avoid overlap
+            compMove = 'paper';
+            resut = 'you lost';
+        } else {
+            compMove = 'scissor';
+            resut = 'Tie';
+        }
+    }
+
+                alert('you choose '+playermove+' the computer choose '+ compMove+' so result is '+ resut+'.');
+}
+
+            const obj={
+                
+            };
         </script>
     </body>
 </html>
